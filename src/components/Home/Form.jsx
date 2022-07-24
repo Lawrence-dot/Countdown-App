@@ -10,7 +10,6 @@ function Form() {
   const addNew = useContext(HomeContext);
   var date = new Date();
   const [note, setNote] = useContext(NoteContext);
-  // notes.setNoteArray([])
 
   const setList = () => {
     localStorage.setItem("notes", JSON.stringify(note));
@@ -18,9 +17,8 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    var fav = false;
     if (title !== "" || content !== "") {
-      setNote([...note, { title, content, date, fav }]);
+      setNote([...note, { title, content, date, fav: false }]);
     }
     resetTitle();
     resetContent();
@@ -35,9 +33,7 @@ function Form() {
 
   useEffect(() => {
     var check = JSON.stringify(note);
-    if (check.length > 2) {
-      setList();
-    }
+    check.length > 2 && setList();
   }, [note]);
 
   return (
@@ -54,7 +50,7 @@ function Form() {
               id="note-title"
               type="text"
               placeholder="Note Title"
-              {...bindTitle}
+              // {...bindTitle}
             />
           </div>
           <div className="input-field input-group mb-3">
@@ -64,7 +60,7 @@ function Form() {
               cols="30"
               rows="10"
               type="text"
-              {...bindContent}
+              // {...bindContent}
             ></textarea>
           </div>
           <div className="button d-flex justify-content-center">
