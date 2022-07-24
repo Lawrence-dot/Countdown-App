@@ -46,7 +46,7 @@ function Form() {
       id="formCard"
     >
       <div className="col-12 my-3 card-body">
-        <form onSubmit={handleSubmit}>
+        <form>
           <h3 className="card-title form-head text-center my-3"> New Note</h3>
           <div className="input-field input-group mb-3">
             <input
@@ -71,9 +71,9 @@ function Form() {
             <button
               className="btn btn-outline-success align-center outline"
               style={btnStyle}
+              onClick={handleSubmit}
             >
-              {" "}
-              +{" "}
+              +
             </button>
           </div>
         </form>
