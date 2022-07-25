@@ -42,7 +42,7 @@ function Form() {
       id="formCard"
     >
       <div className="col-12 my-3 card-body">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h3 className="card-title form-head text-center my-3"> New Note</h3>
           <div className="input-field input-group mb-3">
             <input
@@ -50,7 +50,7 @@ function Form() {
               id="note-title"
               type="text"
               placeholder="Note Title"
-              // {...bindTitle}
+              {...bindTitle}
             />
           </div>
           <div className="input-field input-group mb-3">
@@ -60,14 +60,13 @@ function Form() {
               cols="30"
               rows="10"
               type="text"
-              // {...bindContent}
+              {...bindContent}
             ></textarea>
           </div>
           <div className="button d-flex justify-content-center">
             <button
               className="btn btn-outline-success align-center outline"
               style={btnStyle}
-              onClick={handleSubmit}
             >
               +
             </button>

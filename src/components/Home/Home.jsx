@@ -23,7 +23,7 @@ function Home() {
     if (addToggler !== null && formCard !== null) {
       if (show) {
         formCard.style.display = "block";
-        addToggler.innerText = "x";
+        addToggler.innerText = "-";
       } else {
         formCard.style.display = "none";
         addToggler.innerText = "+";

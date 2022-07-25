@@ -54,7 +54,7 @@ function Notes(props) {
       var two = Date.parse(note.date);
       var three = date - two;
       var diff = Math.round(three / 1000);
-      var type = "days";
+      var type;
       if (diff > 60) {
         diff = Math.round(diff / 60);
         type = "mins";
