@@ -17,7 +17,7 @@ function Favourite() {
     if (spinner) {
       spinner.style.display = "none";
     }
-  }, 1000);
+  }, 500);
 
   useEffect(() => {
     setLoading(false);
@@ -25,13 +25,11 @@ function Favourite() {
 
   return (
     <div className="container">
-      <div className="App">
-        <div className="containers-fav" id="spinner">
-          <div className="loading">
-            <span>
-              <FontAwesomeIcon icon={faBook} />
-            </span>
-          </div>
+      <div className="containers-fav" id="spinner">
+        <div className="loading">
+          <span>
+            <FontAwesomeIcon icon={faBook} />
+          </span>
         </div>
       </div>
 

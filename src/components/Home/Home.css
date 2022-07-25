@@ -68,7 +68,7 @@ input:focus, textarea:focus {
         font-size: 30px;
         position: fixed;
         border-radius: 50%;
-        z-index: 199999999;
+        z-index: 20;
         top: 85vh;
         right: 7px;
     }
@@ -81,5 +81,11 @@ input:focus, textarea:focus {
     .addToggler {
         animation: fadeOut;
         animation-duration: 2s;
+    }
+
+    .formModal {
+        height: 100vh;
+        position: fixed;
+        z-index: 900;
     }
 }

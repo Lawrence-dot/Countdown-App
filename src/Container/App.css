@@ -72,6 +72,7 @@ nav {
 .containers {
   align-items: center;
   display: flex;
+  position: fixed;
   height: 100vh;
   justify-content: center;
   width: 100vw;

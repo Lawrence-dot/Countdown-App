@@ -24,7 +24,7 @@ const App = props => {
     if (spinner) {
       spinner.style.display = 'none';
     }
-  }, 1000)
+  }, 500)
 
   useEffect(()=>{
     setStatus(false);

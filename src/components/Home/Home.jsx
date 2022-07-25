@@ -15,11 +15,7 @@ function Home() {
   window.onresize = function () {
     var size = window.innerWidth;
     if (formCard !== null) {
-      if (size > 767.99) {
-        formCard.style.display = "block";
-      } else {
-        formCard.style.display = "none";
-      }
+      size > 767.99 && (formCard.style.display = "block");
     }
   };
 
@@ -27,7 +23,7 @@ function Home() {
     if (addToggler !== null && formCard !== null) {
       if (show) {
         formCard.style.display = "block";
-        addToggler.innerText = "-";
+        addToggler.innerText = "x";
       } else {
         formCard.style.display = "none";
         addToggler.innerText = "+";
@@ -37,13 +33,14 @@ function Home() {
 
   const toggleAdd = () => {
     var size = window.innerWidth;
-    if (size < 767.99) {
-      setShow(!show);
-    }
+    size < 767.99 && setShow(!show);
   };
 
   return (
     <HomeContext.Provider value={toggleAdd}>
+      {/* <div className="formModal bg-red">
+        <Form />
+      </div> */}
       <div className="container">
         <div className="row">
           <div className="mobile-toggle">
@@ -56,7 +53,7 @@ function Home() {
               </span>
             </button>
           </div>
-          <div className="col-sm-12 col-md-7">
+          <div className="col-sm-12 col-md-7 formCon">
             <Form />
           </div>
           <div className="col-sm-12 col-md-5">

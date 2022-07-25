@@ -5,7 +5,6 @@ import { NoteContext } from "../../Container/App";
 function Edit() {
   const [note, setNote, edit] = useContext(NoteContext);
   console.log(edit);
-  const thisNote = note[edit];
   const btnStyle = {
     maxWidth: "85px",
     height: "42px",
