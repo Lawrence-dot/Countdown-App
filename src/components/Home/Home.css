@@ -77,6 +77,12 @@ input:focus, textarea:focus {
     padding-left: 16px;
     padding-right: 16px;
 }
+
+.container-n {
+    padding-left: 10px;
+    padding-right: 10px;
+   }
+
     
 @media (max-width: 767.98px) {
     .fixed-md {
@@ -84,10 +90,16 @@ input:focus, textarea:focus {
         width: 100%!important;
     }
 
-    .container-m {
-    padding-left: 10px;
-    padding-right: 10px;
-}
+    .container-n {
+    padding-left: 15px;
+    padding-right: 15px;
+   }
+
+   .container-m {
+    padding-left: 15px;
+    padding-right: 15px;
+   }
+
     
     .container-main {
         padding-left: 10px;

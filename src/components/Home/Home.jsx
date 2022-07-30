@@ -56,7 +56,7 @@ function Home() {
           </div>
 
           <div className="col-sm-12 col-md-6 container-m">
-            <div className="row d-flex justify-content-center">
+            <div className="row d-flex container-n justify-content-center">
               {note.length > 0 ? (
                 note.map((note, index) => {
                   var two = Date.parse(note.date);
