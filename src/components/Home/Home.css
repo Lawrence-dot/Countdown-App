@@ -14,6 +14,11 @@ input:focus, textarea:focus {
     color: red;
 }
 
+.font-bold {
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .preloader {
     background-size: cover;
     background-color: red;
@@ -24,8 +29,8 @@ input:focus, textarea:focus {
 .form-card {
     display: block;
     width: 40%;
-    animation: fadeInDown;
-    animation-duration: 2s;
+    animation: fadeInDown .65s;
+    max-width: 400px;
 }
 
 .form-head {
@@ -33,8 +38,10 @@ input:focus, textarea:focus {
 }
 
 .notes-card {
+    display: block;
+    margin: 0 auto;
     animation: fadeInUp;
-    animation-duration: 2s;
+    animation-duration: .5s;
 }
 
 .notes-card:hover {
@@ -50,12 +57,43 @@ input:focus, textarea:focus {
     text-decoration: none;
 }
 
+.nav-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: inherit;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container-main {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.container-m {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+    
 @media (max-width: 767.98px) {
     .fixed-md {
         position: relative!important;
         width: 100%!important;
     }
+
+    .container-m {
+    padding-left: 10px;
+    padding-right: 10px;
+}
     
+    .container-main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
     .form-card {
         width: 90%;
         display: none;
@@ -69,8 +107,8 @@ input:focus, textarea:focus {
         position: fixed;
         border-radius: 50%;
         z-index: 20;
-        top: 85vh;
-        right: 7px;
+        bottom: 10px;
+        right: 10px;
     }
 
     .mobile-toggle {
@@ -87,5 +125,12 @@ input:focus, textarea:focus {
         height: 100vh;
         position: fixed;
         z-index: 900;
+    }
+}
+
+@media (max-width : 576px) {
+    .notes-card {
+        max-height: 250px;
+        max-width: 400px;
     }
 }

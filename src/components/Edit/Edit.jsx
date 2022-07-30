@@ -8,7 +8,7 @@ function Edit() {
   const btnStyle = {
     maxWidth: "85px",
     height: "42px",
-    borderRadius: "10px",
+    borderRadius: "5px",
     transition: "all .5s easeIn",
   };
 
@@ -25,15 +25,18 @@ function Edit() {
   };
 
   return (
-    <div
-      className="container d-flex justify-content-center"
-      style={{ maxWidth: "500px" }}
-    >
-      <div className="row card w-50 my-3 border-2 border-success position-fixed fixed-md">
+    <div className="container-main d-flex justify-content-center">
+      <div
+        style={{ maxWidth: "430px" }}
+        className="row card rounded w-50 my-3 border-2 border-success position-fixed fixed-md"
+      >
         <div className="col-12 my-3 mx-1">
           <form>
-            <h3 className="card-title text-center my-3"> Edit Note</h3>
-            <div className="input-field input-group mb-3">
+            <h3 className="card-title text-center my-3 font-bold">
+              {" "}
+              Edit Note
+            </h3>
+            <div className="input-field input-group mb-3 px-2">
               <input
                 className="w-100 border-0 border-bottom"
                 id="title-int"
@@ -42,9 +45,9 @@ function Edit() {
                 defaultValue={edit[0].title}
               />
             </div>
-            <div className="input-field input-group mb-3">
+            <div className="input-field input-group mb-3 px-2">
               <textarea
-                className="w-100 border-1"
+                className="w-100 border-1 px-2"
                 id="content-int"
                 cols="30"
                 rows="10"

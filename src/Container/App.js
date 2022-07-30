@@ -24,7 +24,7 @@ const App = props => {
     if (spinner) {
       spinner.style.display = 'none';
     }
-  }, 500)
+  }, 900)
 
   useEffect(()=>{
     setStatus(false);
@@ -49,7 +49,7 @@ const App = props => {
     </div>
     
     {!status &&(
-      <div className='body-app animate_animated animate_fadeInUp animate_delay-5s'>
+      <div className='body-app'>
         <Router>
          <Navbar />
          <Routes>

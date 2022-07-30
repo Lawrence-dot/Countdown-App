@@ -38,10 +38,7 @@ function Home() {
 
   return (
     <HomeContext.Provider value={toggleAdd}>
-      {/* <div className="formModal bg-red">
-        <Form />
-      </div> */}
-      <div className="container">
+      <div className="container-main">
         <div className="row">
           <div className="mobile-toggle">
             <button
@@ -53,59 +50,63 @@ function Home() {
               </span>
             </button>
           </div>
-          <div className="col-sm-12 col-md-7 formCon">
+
+          <div className="col-sm-12 col-md-6 d-flex justify-content-center formCon">
             <Form />
           </div>
-          <div className="col-sm-12 col-md-5">
-            {note.length > 0 ? (
-              note.map((note, index) => {
-                var two = Date.parse(note.date);
-                var three = date - two;
-                var diff = Math.round(three / 1000);
-                var type = "days";
-                if (diff > 60) {
-                  diff = Math.round(diff / 60);
-                  if (diff > 1) {
-                    type = "mins";
+
+          <div className="col-sm-12 col-md-6 container-m">
+            <div className="row d-flex justify-content-center">
+              {note.length > 0 ? (
+                note.map((note, index) => {
+                  var two = Date.parse(note.date);
+                  var three = date - two;
+                  var diff = Math.round(three / 1000);
+                  var type = "days";
+                  if (diff > 60) {
+                    diff = Math.round(diff / 60);
+                    if (diff > 1) {
+                      type = "mins";
+                    } else {
+                      type = "min";
+                    }
+                  } else if (diff > 3600) {
+                    diff = Math.round(diff / 3600);
+                    if (diff > 1) {
+                      type = "hours";
+                    } else {
+                      type = "hour";
+                    }
+                  } else if (diff > 86400) {
+                    diff = Math.round(diff / 86400);
+                    if (diff > 1) {
+                      type = "days";
+                    } else {
+                      type = "day";
+                    }
                   } else {
-                    type = "min";
+                    if (diff > 1) {
+                      type = "secs";
+                    } else {
+                      type = "sec";
+                    }
                   }
-                } else if (diff > 3600) {
-                  diff = Math.round(diff / 3600);
-                  if (diff > 1) {
-                    type = "hours";
-                  } else {
-                    type = "hour";
-                  }
-                } else if (diff > 86400) {
-                  diff = Math.round(diff / 86400);
-                  if (diff > 1) {
-                    type = "days";
-                  } else {
-                    type = "day";
-                  }
-                } else {
-                  if (diff > 1) {
-                    type = "secs";
-                  } else {
-                    type = "sec";
-                  }
-                }
-                return (
-                  <Notes
-                    title={note.title}
-                    content={note.content}
-                    pos={index}
-                    fav={note.fav}
-                    key={index}
-                    time={diff}
-                    type={type}
-                  />
-                );
-              })
-            ) : (
-              <p className="text-center mt-2">No Saved Notes</p>
-            )}
+                  return (
+                    <Notes
+                      title={note.title}
+                      content={note.content}
+                      pos={index}
+                      fav={note.fav}
+                      key={index}
+                      time={diff}
+                      type={type}
+                    />
+                  );
+                })
+              ) : (
+                <p className="text-center mt-2">No Saved Notes</p>
+              )}
+            </div>
           </div>
         </div>
       </div>

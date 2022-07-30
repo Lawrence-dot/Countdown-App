@@ -10,6 +10,8 @@ function Notes(props) {
   const [note, setNote, edit, setEdit] = useContext(NoteContext);
   const [timeD, SettimeD] = useState([]);
   const [colorFav, setcolorFav] = useState(false);
+  var date = new Date();
+  var thisTime = props.time;
 
   const setList = () => {
     localStorage.setItem("note", JSON.stringify(note));
@@ -18,10 +20,8 @@ function Notes(props) {
   const toggleFav = (pos) => {
     if (colorFav === false) {
       note[pos].fav = true;
-      alert("Succesfully Added to Favourites");
     } else {
       note[pos].fav = false;
-      alert("Succesfully Removed to Favourites");
     }
 
     setNote([...note]);
@@ -49,7 +49,7 @@ function Notes(props) {
   };
 
   useEffect(() => {
-    var date = new Date();
+    date = new Date();
     note.map((note, index) => {
       var two = Date.parse(note.date);
       var three = date - two;
@@ -73,7 +73,7 @@ function Notes(props) {
 
   return (
     <EditContext.Provider value={edit}>
-      <div className="card notes-card border-1 mt-4">
+      <div className="card notes-card border-1 col-12 col-sm-5 col-md-12 mx-1 mt-4">
         <div className="favicons d-flex justify-content-end">
           <span
             className={
@@ -84,9 +84,12 @@ function Notes(props) {
             <FontAwesomeIcon icon={faHeart} />
           </span>
         </div>
-        <div className="row card-body">
-          <h3 className="card-title text-center mb-3"> {props.title}</h3>
-          <p className="note-text">{props.content}</p>
+        <div className="row card-body py-0 my-1">
+          <h3 className="card-title text-center mb-2 font-bold">
+            {" "}
+            {props.title}
+          </h3>
+          <p className="note-text text-center">{props.content}</p>
           <p className="timeStand text-center">
             {props.time > 60
               ? Math.round(props.time / 60)

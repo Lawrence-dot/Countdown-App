@@ -13,11 +13,9 @@ function Favourite() {
     return note.fav === true;
   });
 
-  setTimeout(() => {
-    if (spinner) {
-      spinner.style.display = "none";
-    }
-  }, 500);
+  if (spinner) {
+    spinner.style.display = "none";
+  }
 
   useEffect(() => {
     setLoading(false);
