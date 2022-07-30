@@ -28,7 +28,11 @@ function Form() {
   const btnStyle = {
     borderRadius: "50%",
     maxWidth: "40px",
-    height: "40px",
+    height: "42px",
+    width: "55px",
+    fontSize: "20px",
+    padding: "0px",
+    textAlign: "center",
   };
 
   useEffect(() => {

@@ -73,7 +73,7 @@ function Notes(props) {
 
   return (
     <EditContext.Provider value={edit}>
-      <div className="card notes-card border-1 col-12 col-sm-5 col-md-12 mx-1 mt-4">
+      <div className="card container-main notes-card border-1 col-12 col-sm-5 col-md-12 mx-1 mt-4">
         <div className="favicons d-flex justify-content-end">
           <span
             className={
