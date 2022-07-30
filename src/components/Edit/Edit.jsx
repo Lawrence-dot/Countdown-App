@@ -27,8 +27,8 @@ function Edit() {
   return (
     <div className="container-main d-flex justify-content-center">
       <div
-        style={{ maxWidth: "430px" }}
-        className="row card rounded w-50 my-3 border-2 border-success position-fixed fixed-md"
+        style={{ maxWidth: "410px" }}
+        className="row card edit-card rounded w-50 my-3 border-2 border-success position-fixed fixed-md"
       >
         <div className="col-12 my-3 mx-1">
           <form>
