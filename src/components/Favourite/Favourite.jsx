@@ -1,58 +1,67 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NoteContext } from "../../Container/App";
-import Notes from "../Home/Notes";
+import Navbar from "../Layout/Navbar";
 import "./Favourite.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 function Favourite() {
-  var spinner = document.getElementById("spinner");
-  const [loading, setLoading] = useState(true);
   const [note, setNote] = useContext(NoteContext);
-  const filt = note.filter((note) => {
-    return note.fav === true;
+  var filt = [];
+
+  note.map((note, index) => {
+    note.fav === true && filt.push({ ...note, pos: index });
   });
 
-  if (spinner) {
-    spinner.style.display = "none";
-  }
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  const deleteFav = (pos) => {
+    let noteCopy = [...note];
+    noteCopy[pos].fav = false;
+    setNote(noteCopy);
+  };
 
   return (
-    <div className="container">
-      <div className="containers-fav" id="spinner">
-        <div className="loading">
-          <span>
-            <FontAwesomeIcon icon={faBook} />
-          </span>
+    <div>
+      <Navbar title="Home" />
+      <div className="container-m">
+        <div className="container-m fav-body">
+          <h1 className="text-center pointer my-3 font-bold favHead">
+            My Favourites
+          </h1>
+          <div className="d-flex flex-row row justify-content-center mt-2">
+            {filt.length > 0 ? (
+              filt.map((note, index) => {
+                return (
+                  <div
+                    className="col card col-12 col-sm-5 col-md-3 mx-2 my-2"
+                    style={{ padding: "3px" }}
+                  >
+                    <div className="fav-card border-1" key={index}>
+                      <div
+                        className="row card-body pointer"
+                        style={{ padding: "8px" }}
+                      >
+                        <div className="title d-flex flex-row">
+                          <h4 className="col-11 card-title text-center ml-3 mb-3">
+                            {" "}
+                            {note.title}
+                          </h4>
+                          <span
+                            className="cancel ms-auto text-red font-bold"
+                            onClick={() => deleteFav(note.pos)}
+                          >
+                            x
+                          </span>
+                        </div>
+                        <p className="note-text text-center">{note.content}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <h4 className="text-center mt-4"> No Favourites </h4>
+            )}
+          </div>
         </div>
       </div>
-
-      {!loading && (
-        <div className="container fav-body mx-1">
-          <h3 className="text-center mt-3 text-bold">My Favourites</h3>
-          {filt.length > 0 ? (
-            filt.map((note, index) => {
-              return (
-                <div className="card border-1 mt-4" key={index}>
-                  <div className="row card-body">
-                    <h3 className="card-title text-center mb-3">
-                      {" "}
-                      {note.title}
-                    </h3>
-                    <p className="note-text text-center">{note.content}</p>
-                  </div>
-                </div>
-              );
-            })
-          ) : (
-            <p className="text-center"> No Favourites </p>
-          )}
-        </div>
-      )}
     </div>
   );
 }

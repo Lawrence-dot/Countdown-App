@@ -1,33 +1,36 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faBook } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faBook, faHome } from "@fortawesome/free-solid-svg-icons";
 import "../Home/Home.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg bg-success sticky-top ">
       <div className="nav-container">
-        <NavLink className="navbar-brand text-white" to="/">
+        <NavLink className="navbar-brands fadeIn text-white" to="/">
           <span className="mx-1">
-            <FontAwesomeIcon icon={faBook} />
+            {props.title === "Home" ? (
+              <FontAwesomeIcon icon={faHome} />
+            ) : (
+              <FontAwesomeIcon icon={faBook} />
+            )}
           </span>
-          <span className="mt-1">NotePad</span>
+          <span className="mt-1">{props.title}</span>
         </NavLink>
         <div
           className="d-flex ms-auto justify-content-end"
           id="navbarNavAltMarkup"
         >
-          <div className="nav nav-bar">
-            <NavLink className="nav-text text-white ms-auto" to="/favourite">
-              <span className="d-none d-md-block"> Favourites </span>
-              <span className="d-block d-md-none">
+          <div
+            className="nav nav-bar navbar-brands"
+            style={{ margingRight: "0px" }}
+          >
+            <NavLink className="nav-text text-white" to="/favourite">
+              <span className="d-block">
                 Favourites <FontAwesomeIcon icon={faHeart} />
               </span>
             </NavLink>
-            {/* <NavLink className="nav-link text-white d-sm-block d-md-none active" to='/'>
-                   <span className="d-sm-block d-md-none"> &#9829; </span> 
-                </NavLink>  */}
           </div>
         </div>
       </div>

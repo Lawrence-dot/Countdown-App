@@ -23,11 +23,11 @@ const App = props => {
   setTimeout(()=>{
     if (spinner) {
       spinner.style.display = 'none';
+      setStatus(false);
     }
-  }, 900)
+  }, 950)
 
   useEffect(()=>{
-    setStatus(false);
     var vals = localStorage.getItem('notes');
     if (vals) {
         setNote(JSON.parse(vals));
@@ -51,7 +51,7 @@ const App = props => {
     {!status &&(
       <div className='body-app'>
         <Router>
-         <Navbar />
+         {/* <Navbar /> */}
          <Routes>
            <Route path='/' 
            element={<Home />} 

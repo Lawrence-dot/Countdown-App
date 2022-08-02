@@ -26,15 +26,9 @@
     width: 7em;
   }
   
-  .containers-fav {
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    justify-content: center;
-    /* width: 100vw; */
-    }
+  .favHead {
+    animation: fadeInDown .6s;
+  }
   
     @keyframes -sk-scaleout {
       0% {
