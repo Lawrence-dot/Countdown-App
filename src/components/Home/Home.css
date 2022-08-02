@@ -111,10 +111,16 @@ input:focus, textarea:focus {
 .cancel {
     color: red;
     cursor: pointer;
+    margin-top: -5px;
 }
 
 .fav-card {
     animation: fadeInUp .6s;
+}
+
+.fav-card:hover {
+    background-color: rgb(185, 223, 185);
+    box-shadow: 0.5px 0.5px rgb(189, 178, 157);
 }
 
 .fadeIn {
