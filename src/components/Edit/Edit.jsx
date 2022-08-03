@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { NoteContext } from "../../Container/App";
+import Navbar from "../Layout/Navbar";
 
 function Edit() {
   const [note, setNote, edit] = useContext(NoteContext);
