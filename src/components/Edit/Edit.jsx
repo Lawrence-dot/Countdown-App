@@ -25,47 +25,50 @@ function Edit() {
   };
 
   return (
-    <div className="container-main d-flex justify-content-center">
-      <div
-        style={{ maxWidth: "400px" }}
-        className="row card edit-card rounded w-50 my-3 border-2 border-success position-fixed fixed-md"
-      >
-        <div className="col-12 my-3 mx-1">
-          <form>
-            <h3 className="card-title text-center my-3 font-bold">
-              {" "}
-              Edit Note
-            </h3>
-            <div className="input-field input-group mb-3 px-2">
-              <input
-                className="w-100 border-0 border-bottom"
-                id="title-int"
-                type="text"
-                placeholder="Note Title"
-                defaultValue={edit[0].title}
-              />
-            </div>
-            <div className="input-field input-group mb-3 px-2">
-              <textarea
-                className="w-100 border-1 px-2"
-                id="content-int"
-                cols="30"
-                rows="10"
-                type="text"
-                defaultValue={edit[0].content}
-              ></textarea>
-            </div>
-            <div className="button d-flex justify-content-center">
-              <NavLink
-                to="/"
-                className="btn btn-outline-success align-center outline"
-                style={btnStyle}
-                onClick={updateHandler}
-              >
-                Update
-              </NavLink>
-            </div>
-          </form>
+    <div>
+      <Navbar title="Home" />
+      <div className="container-main d-flex justify-content-center">
+        <div
+          style={{ maxWidth: "400px" }}
+          className="row card edit-card rounded w-50 my-3 border-2 border-success position-fixed fixed-md"
+        >
+          <div className="col-12 my-3 mx-1">
+            <form>
+              <h3 className="card-title text-center my-3 font-bold">
+                {" "}
+                Edit Note
+              </h3>
+              <div className="input-field input-group mb-3 px-2">
+                <input
+                  className="w-100 border-0 border-bottom"
+                  id="title-int"
+                  type="text"
+                  placeholder="Note Title"
+                  defaultValue={edit[0].title}
+                />
+              </div>
+              <div className="input-field input-group mb-3 px-2">
+                <textarea
+                  className="w-100 border-1 px-2"
+                  id="content-int"
+                  cols="30"
+                  rows="10"
+                  type="text"
+                  defaultValue={edit[0].content}
+                ></textarea>
+              </div>
+              <div className="button d-flex justify-content-center">
+                <NavLink
+                  to="/"
+                  className="btn btn-outline-success align-center outline"
+                  style={btnStyle}
+                  onClick={updateHandler}
+                >
+                  Update
+                </NavLink>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
