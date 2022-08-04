@@ -162,10 +162,15 @@ input:focus, textarea:focus {
         text-align: center;
         position: fixed;
         border-radius: 50%;
-        z-index: 20;
+        z-index: 90;
         bottom: 10px;
         right: 10px;
         padding: 0;
+        transition: all .5s ease-in-out;
+    }
+
+    .addToggler {
+        transition: all .6s ease-in-out;
     }
 
     .mobile-toggle {
