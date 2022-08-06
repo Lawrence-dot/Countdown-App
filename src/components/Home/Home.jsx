@@ -37,19 +37,14 @@ function Home() {
 
   useEffect(() => {
     if (addToggler !== null && formCard !== null) {
-      if (show) {
-        formCard.style.display = "block";
-        addToggler.innerText = "-";
-      } else {
-        formCard.style.display = "none";
-        addToggler.innerText = "+";
-      }
+      show
+        ? (formCard.style.display = "block")((addToggler.innerText = "-"))
+        : (formCard.style.display = "none")((addToggler.innerText = "+"));
     }
   }, [show]);
 
   const toggleAdd = () => {
-    var size = window.innerWidth;
-    size < 767.99 && setShow(!show);
+    window.innerWidth < 767.99 && setShow(!show);
   };
 
   const noteList =
@@ -134,20 +129,15 @@ function Home() {
     );
 
   const searchHandler = () => {
-    var text = searchRef.current.value;
-    if (text.length > 0) {
-      setSearching(true);
-      note.map((note) => {
-        if (note.title.includes(text)) {
-          let match = [];
-          match.push(note);
-          setMatches(match);
-        }
-      });
-    } else {
-      setSearching(false);
-      setMatches([]);
-    }
+    var text = searchRef.current.value.toLowerCase();
+    setSearching(text.length > 0 ? true : false);
+    let match = note.filter((note) => {
+      return (
+        note.title.toLowerCase().includes(text) ||
+        note.content.toLowerCase().includes(text)
+      );
+    });
+    setMatches(match);
   };
 
   return (

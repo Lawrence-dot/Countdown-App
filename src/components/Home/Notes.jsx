@@ -17,11 +17,7 @@ function Notes(props) {
   };
 
   const toggleFav = (pos) => {
-    if (colorFav === false) {
-      note[pos].fav = true;
-    } else {
-      note[pos].fav = false;
-    }
+    colorFav === false ? (note[pos].fav = true) : (note[pos].fav = false);
 
     setNote([...note]);
     setList();
@@ -30,20 +26,14 @@ function Notes(props) {
   };
 
   const deleteHandler = (pos) => {
-    if (note.length >= 1) {
-      var spliced = [...note];
-      spliced.splice(pos, 1);
-      setNote(spliced);
-    } else {
-      setNote([]);
-      localStorage.clear();
-    }
-
+    var spliced = [...note];
+    note.length >= 1
+      ? spliced.splice(pos, 1)(setNote(spliced))
+      : setNote([])(localStorage.clear());
     setList();
   };
 
   const editHandler = (pos) => {
-    console.log(note.at(pos));
     setEdit([note.at(pos), pos]);
   };
 
