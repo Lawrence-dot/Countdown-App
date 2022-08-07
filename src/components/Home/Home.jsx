@@ -37,9 +37,12 @@ function Home() {
 
   useEffect(() => {
     if (addToggler !== null && formCard !== null) {
-      show
-        ? (formCard.style.display = "block")((addToggler.innerText = "-"))
-        : (formCard.style.display = "none")((addToggler.innerText = "+"));
+      if (show) {
+        formCard.style.display = "block";
+        addToggler.innerText = "-";
+      } else {
+        formCard.style.display = "none";
+      }
     }
   }, [show]);
 
