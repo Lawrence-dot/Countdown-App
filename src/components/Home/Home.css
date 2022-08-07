@@ -53,6 +53,7 @@ input:focus, textarea:focus {
 .notes-card {
     display: block;
     margin: 0 auto;
+    /* overflow-y: auto; */
     animation: fadeInUp;
     animation-duration: .5s;
 }
@@ -198,7 +199,6 @@ input:focus, textarea:focus {
 
 @media (max-width : 576px) {
     .notes-card {
-        max-height: 250px;
         max-width: 400px;
     }
 }

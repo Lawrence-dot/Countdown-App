@@ -42,6 +42,7 @@ function Home() {
         addToggler.innerText = "-";
       } else {
         formCard.style.display = "none";
+        addToggler.innerText = "+";
       }
     }
   }, [show]);
